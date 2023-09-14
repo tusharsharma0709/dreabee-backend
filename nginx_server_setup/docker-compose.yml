@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+
+  nginx-proxy:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-nginx
+    ports:
+      - "80:80"
+    container_name: proxy
+    depends_on:
+      - admin
+
+  admin:
+    build:
+      context: ../
+      dockerfile: nginx_server_setup/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - "../:/usr/src/app"
+    container_name: main_server
