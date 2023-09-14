@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name   : "AI SEARCH",
+    name   : "Deabee-Backend",
     script : "./index.js"
   }]
 }
